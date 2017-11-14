@@ -6,7 +6,7 @@ public abstract class AbstractFigure {
         setFigureType(figureType);
     }
 
-    public String getFigureType() {
+    private String getFigureType() {
         return figureType;
     }
 
