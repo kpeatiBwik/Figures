@@ -35,11 +35,17 @@ public class Triangle extends AbstractFigure {
         this.sideC = sideC;
     }
 
+    //TODO сделать проверку на правильность треугольника
     double getArea() {
         double p = (getSideA() + getSideB() + getSideC()) / 2;
-        return Math.sqrt(p * (p - getSideA()) * (p - getSideB()) * (p - getSideC()));
+        double check = p * (p - getSideA()) * (p - getSideB()) * (p - getSideC());
+        if (check > 0) {
+            return Math.sqrt(check);
+        }
+        return 0;
     }
 
+    //TODO сделать проверку на правильность треугольника
     double getPerimeter() {
         return getSideA() + getSideB() + getSideC();
     }

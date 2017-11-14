@@ -18,6 +18,7 @@ public abstract class AbstractFigure {
 
     abstract double getPerimeter();
 
+    //TODO добавить поле isCorrect
     @Override
     public String toString() {
         return "Тип фигуры = " + getFigureType() + ", площадь = " + String.valueOf(getArea()) + ", периметр = " + String.valueOf(getPerimeter());
