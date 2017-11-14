@@ -1,18 +1,17 @@
-public abstract class FiguresType {
-
-    protected static String getCIRCLE() {
+class FiguresType {
+    static String getCIRCLE() {
         return "Круг";
     }
 
-    protected static String getTRIANGLE() {
+    static String getTRIANGLE() {
         return "Тругольник";
     }
 
-    protected static String getRECTANGLE() {
+    static String getRECTANGLE() {
         return "Прямоугольник";
     }
 
-    protected static String getSQUARE() {
+    static String getSQUARE() {
         return "Квадрат";
     }
 }
