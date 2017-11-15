@@ -2,25 +2,25 @@ import org.junit.Test;
 
 public class CircleTest {
 
-    private Circle circle = new Circle(FiguresType.CIRCLE, 4);
+    private AbstractFigure circle = new Circle(FiguresType.CIRCLE, 4);
 
     @Test
-    public void testGetArea() throws Exception {
+    public void testGetArea() {
         final double expected = 50.26548245743669;
         if (expected == circle.getArea()) {
-            System.out.println(".getArea - отрабатывает корректно");
+            System.out.println(".getArea для ".concat(circle.getFigureType()).concat(" - отрабатывает корректно"));
         } else {
-            System.out.println(".getArea - отрабатывает НЕ корректно!");
+            System.out.println(".getArea для ".concat(circle.getFigureType()).concat(" - отрабатывает НЕ корректно!"));
         }
     }
 
     @Test
-    public void testGetPerimeter() throws Exception {
+    public void testGetPerimeter() {
         final double expected = 25.132741228718345;
         if (expected == circle.getPerimeter()) {
-            System.out.println(".getPerimeter - отрабатывает корректно");
+            System.out.println(".getPerimeter для ".concat(circle.getFigureType()).concat(" - отрабатывает корректно"));
         } else {
-            System.out.println(".getPerimeter - отрабатывает НЕ корректно!");
+            System.out.println(".getPerimeter для ".concat(circle.getFigureType()).concat(" - отрабатывает НЕ корректно!"));
         }
     }
 }
