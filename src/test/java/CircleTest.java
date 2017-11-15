@@ -1,18 +1,8 @@
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class CircleTest {
 
     private Circle circle = new Circle(FiguresType.CIRCLE, 4);
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
 
     @Test
     public void testGetArea() throws Exception {
@@ -33,5 +23,4 @@ public class CircleTest {
             System.out.println(".getPerimeter - отрабатывает НЕ корректно!");
         }
     }
-
 }
