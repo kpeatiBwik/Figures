@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Triangle extends AbstractFigure {
 
     private double sideA;
@@ -35,18 +37,17 @@ public class Triangle extends AbstractFigure {
         this.sideC = sideC;
     }
 
-    //TODO сделать проверку на правильность треугольника
-    double getArea() {
+    double getArea() throws IllegalArgumentException {
         double p = (getSideA() + getSideB() + getSideC()) / 2;
         double check = p * (p - getSideA()) * (p - getSideB()) * (p - getSideC());
-        if (check > 0) {
-            return Math.sqrt(check);
-        }
-        return 0;
+        if (!(check > 0)) throw new IllegalArgumentException("Некорректные данные");
+        return Math.sqrt(check);
     }
 
-    //TODO сделать проверку на правильность треугольника
-    double getPerimeter() {
+    double getPerimeter() throws IllegalArgumentException {
+        double[] x = new double[]{getSideA(), getSideB(), getSideC()};
+        Arrays.sort(x);
+        if (x[0] + x[1] < x[2]) throw new IllegalArgumentException("Некорректные данные");
         return getSideA() + getSideB() + getSideC();
     }
 }

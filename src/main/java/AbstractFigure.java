@@ -14,13 +14,18 @@ public abstract class AbstractFigure {
         this.figureType = figureType;
     }
 
-    abstract double getArea();
+    abstract double getArea() throws IllegalArgumentException;
 
-    abstract double getPerimeter();
+    abstract double getPerimeter() throws IllegalArgumentException;
 
-    //TODO добавить поле isCorrect
     @Override
     public String toString() {
-        return "Тип фигуры = " + getFigureType() + ", площадь = " + String.valueOf(getArea()) + ", периметр = " + String.valueOf(getPerimeter());
+        String result;
+        try {
+            result = "Тип фигуры = ".concat(getFigureType()).concat(", площадь = ").concat(String.valueOf(getArea())).concat(", периметр = ").concat(String.valueOf(getPerimeter()));
+        } catch (IllegalArgumentException e) {
+            result = e.getMessage();
+        }
+        return result;
     }
 }
