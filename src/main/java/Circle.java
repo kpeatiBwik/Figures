@@ -16,10 +16,12 @@ public class Circle extends AbstractFigure {
     }
 
     double getArea() {
+        if (getRadius() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return Math.PI * Math.pow(getRadius(), 2);
     }
 
     double getPerimeter() {
+        if (getRadius() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return 2 * Math.PI * getRadius();
     }
 }

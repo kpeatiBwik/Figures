@@ -26,10 +26,12 @@ public class Rectangle extends AbstractFigure {
     }
 
     double getArea() {
+        if (getSideA() <= 0 || getSideB() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return getSideA() * getSideB();
     }
 
     double getPerimeter() {
+        if (getSideA() <= 0 || getSideB() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return (2 * getSideA()) + (2 * getSideB());
     }
 }

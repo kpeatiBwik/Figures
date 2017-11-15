@@ -40,7 +40,7 @@ public class Triangle extends AbstractFigure {
     double getArea() throws IllegalArgumentException {
         double p = (getSideA() + getSideB() + getSideC()) / 2;
         double check = p * (p - getSideA()) * (p - getSideB()) * (p - getSideC());
-        if (!(check > 0)) throw new IllegalArgumentException("Некорректные данные");
+        if (!(check >= 0)) throw new IllegalArgumentException("Некорректные данные");
         return Math.sqrt(check);
     }
 

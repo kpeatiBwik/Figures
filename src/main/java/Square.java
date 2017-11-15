@@ -16,10 +16,12 @@ public class Square extends AbstractFigure {
     }
 
     double getArea() {
+        if (getSideA() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return getSideA() * getSideA();
     }
 
     double getPerimeter() {
+        if (getSideA() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return getSideA() * 4;
     }
 }
