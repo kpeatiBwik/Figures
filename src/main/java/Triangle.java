@@ -50,4 +50,30 @@ public class Triangle extends AbstractFigure {
         if (x[0] + x[1] < x[2]) throw new IllegalArgumentException("Некорректные данные");
         return getSideA() + getSideB() + getSideC();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Triangle triangle = (Triangle) o;
+
+        if (Double.compare(triangle.sideA, sideA) != 0) return false;
+        if (Double.compare(triangle.sideB, sideB) != 0) return false;
+        return Double.compare(triangle.sideC, sideC) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        long temp;
+        temp = Double.doubleToLongBits(sideA);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(sideB);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(sideC);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }

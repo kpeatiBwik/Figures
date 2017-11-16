@@ -28,4 +28,19 @@ public abstract class AbstractFigure {
         }
         return result;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        AbstractFigure that = (AbstractFigure) o;
+
+        return figureType != null ? figureType.equals(that.figureType) : that.figureType == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return figureType != null ? figureType.hashCode() : 0;
+    }
 }
