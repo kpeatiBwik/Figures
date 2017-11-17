@@ -33,13 +33,14 @@ public class Main {
 
         Triangle triangle = new Triangle();
 
-        List<Interface> interfaceList = new ArrayList<Interface>();
-        interfaceList.add(new Triangle.IsoscelesTriangle());
-        interfaceList.add(triangle.new EquilateralTriangle());
+        List<InterfaceForTriangle> interfaceForTriangleList = new ArrayList<InterfaceForTriangle>();
+        interfaceForTriangleList.add(new Triangle.IsoscelesTriangle());
+        interfaceForTriangleList.add(triangle.new EquilateralTriangle());
 
-        for (Interface anInterface : interfaceList){
-            System.out.println(anInterface.getMsg());
+        for (InterfaceForTriangle anInterfaceForTriangle : interfaceForTriangleList) {
+            System.out.println(anInterfaceForTriangle.getMsg());
         }
-    }
 
+        System.out.println(triangle.methodWithAnonymousClass());
+    }
 }

@@ -1,6 +1,8 @@
+import com.sun.org.apache.bcel.internal.classfile.InnerClass;
+
 import java.util.Arrays;
 
-public class Triangle extends AbstractFigure implements Interface{
+public class Triangle extends AbstractFigure implements InterfaceForTriangle {
 
     private double sideA;
     private double sideB;
@@ -42,21 +44,28 @@ public class Triangle extends AbstractFigure implements Interface{
     }
 
     public String getMsg() {
-        return null;
+        return "Hi, i'm Triangle";
     }
-
-    public static class IsoscelesTriangle implements Interface{
-
+    //внутренний класс
+    public static class IsoscelesTriangle implements InterfaceForTriangle {
         public String getMsg() {
             return "Hi, i'm IsoscelesTriangle";
         }
     }
-
-    public class EquilateralTriangle implements Interface{
-
+    //вложенный класс
+    public class EquilateralTriangle implements InterfaceForTriangle {
         public String getMsg() {
             return "Hi, i'm EquilateralTriangle";
         }
+    }
+    //метод внутри которого анонимный класс
+    String methodWithAnonymousClass() {
+        InterfaceForTriangle interfaceForTriangle = new InterfaceForTriangle() {
+            public String getMsg() {
+                return "Hi, a'm interfaceForTriangle from Triangle";
+            }
+        };
+        return interfaceForTriangle.getMsg();
     }
 
     double getArea() throws IllegalArgumentException {
