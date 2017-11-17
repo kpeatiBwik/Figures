@@ -1,6 +1,4 @@
-import com.sun.org.apache.bcel.internal.classfile.InnerClass;
-
-import java.util.Arrays;
+import java.util.*;
 
 public class Triangle extends AbstractFigure implements InterfaceForTriangle {
 
@@ -46,18 +44,21 @@ public class Triangle extends AbstractFigure implements InterfaceForTriangle {
     public String getMsg() {
         return "Hi, i'm Triangle";
     }
+
     //внутренний класс
     public static class IsoscelesTriangle implements InterfaceForTriangle {
         public String getMsg() {
             return "Hi, i'm IsoscelesTriangle";
         }
     }
+
     //вложенный класс
     public class EquilateralTriangle implements InterfaceForTriangle {
         public String getMsg() {
             return "Hi, i'm EquilateralTriangle";
         }
     }
+
     //метод внутри которого анонимный класс
     String methodWithAnonymousClass() {
         InterfaceForTriangle interfaceForTriangle = new InterfaceForTriangle() {
