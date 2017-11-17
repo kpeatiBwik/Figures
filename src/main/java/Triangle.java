@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Triangle extends AbstractFigure {
+public class Triangle extends AbstractFigure implements Interface{
 
     private double sideA;
     private double sideB;
@@ -11,6 +11,10 @@ public class Triangle extends AbstractFigure {
         setSideA(sideA);
         setSideB(sideB);
         setSideC(sideC);
+    }
+
+    public Triangle() {
+        super(FiguresType.TRIANGLE);
     }
 
     private double getSideA() {
@@ -35,6 +39,24 @@ public class Triangle extends AbstractFigure {
 
     private void setSideC(double sideC) {
         this.sideC = sideC;
+    }
+
+    public String getMsg() {
+        return null;
+    }
+
+    public static class IsoscelesTriangle implements Interface{
+
+        public String getMsg() {
+            return "Hi, i'm IsoscelesTriangle";
+        }
+    }
+
+    public class EquilateralTriangle implements Interface{
+
+        public String getMsg() {
+            return "Hi, i'm EquilateralTriangle";
+        }
     }
 
     double getArea() throws IllegalArgumentException {

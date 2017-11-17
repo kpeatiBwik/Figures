@@ -23,12 +23,23 @@ public class Main {
 
         Map<AbstractFigure, String> abstractFigures1 = new HashMap<AbstractFigure, String>();
         AbstractFigure af = new Circle(FiguresType.CIRCLE, 3);
-        AbstractFigure af2 = new Circle(FiguresType.CIRCLE, 3);
+        AbstractFigure af2 = new Circle(FiguresType.CIRCLE, 4);
         abstractFigures1.put(af, "test1");
         abstractFigures1.put(af2, "test2");
 
         System.out.println(abstractFigures1.get(af));
         System.out.println(abstractFigures1.get(af2));
         System.out.println(abstractFigures1.size());
+
+        Triangle triangle = new Triangle();
+
+        List<Interface> interfaceList = new ArrayList<Interface>();
+        interfaceList.add(new Triangle.IsoscelesTriangle());
+        interfaceList.add(triangle.new EquilateralTriangle());
+
+        for (Interface anInterface : interfaceList){
+            System.out.println(anInterface.getMsg());
+        }
     }
+
 }
