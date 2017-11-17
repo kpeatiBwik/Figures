@@ -42,5 +42,10 @@ public class Main {
         }
 
         System.out.println(triangle.methodWithAnonymousClass());
+
+        Circle circle = new Circle();
+        System.out.println(circle.methodWithAnonymousClass());
+
+        System.out.println(circle.new AnnonymusClassCircle().getTriangle().getMsg());
     }
 }
