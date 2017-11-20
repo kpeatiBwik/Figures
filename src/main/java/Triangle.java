@@ -1,20 +1,16 @@
 import java.util.*;
 
-public class Triangle extends AbstractFigure implements InterfaceForTriangle {
+public class Triangle extends AbstractFigure {
 
     private double sideA;
     private double sideB;
     private double sideC;
 
-    protected Triangle(String figureType, double sideA, double sideB, double sideC) {
+    protected Triangle(String figureType, String sideA, String sideB, String sideC) {
         super(figureType);
-        setSideA(sideA);
-        setSideB(sideB);
-        setSideC(sideC);
-    }
-
-    public Triangle() {
-        super(FiguresType.TRIANGLE);
+        setSideA(Double.valueOf(sideA));
+        setSideB(Double.valueOf(sideB));
+        setSideC(Double.valueOf(sideC));
     }
 
     private double getSideA() {
@@ -39,34 +35,6 @@ public class Triangle extends AbstractFigure implements InterfaceForTriangle {
 
     private void setSideC(double sideC) {
         this.sideC = sideC;
-    }
-
-    public String getMsg() {
-        return "Hi, i'm Triangle";
-    }
-
-    //внутренний класс
-    public static class IsoscelesTriangle implements InterfaceForTriangle {
-        public String getMsg() {
-            return "Hi, i'm IsoscelesTriangle";
-        }
-    }
-
-    //вложенный класс
-    public class EquilateralTriangle implements InterfaceForTriangle {
-        public String getMsg() {
-            return "Hi, i'm EquilateralTriangle";
-        }
-    }
-
-    //метод внутри которого анонимный класс
-    String methodWithAnonymousClass() {
-        InterfaceForTriangle interfaceForTriangle = new InterfaceForTriangle() {
-            public String getMsg() {
-                return "Hi, a'm interfaceForTriangle from Triangle";
-            }
-        };
-        return interfaceForTriangle.getMsg();
     }
 
     double getArea() throws IllegalArgumentException {

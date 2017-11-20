@@ -3,10 +3,10 @@ public class Rectangle extends AbstractFigure {
     private double sideA;
     private double sideB;
 
-    protected Rectangle(String figureType, double sideA, double sideB) {
+    protected Rectangle(String figureType, String sideA, String sideB) {
         super(figureType);
-        setSideA(sideA);
-        setSideB(sideB);
+        setSideA(Double.valueOf(sideA));
+        setSideB(Double.valueOf(sideB));
     }
 
     private double getSideA() {

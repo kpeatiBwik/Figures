@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SquareTest {
 
-    private Square square = new Square(FiguresType.SQUARE, 4);
+    private Square square = new Square(FiguresType.SQUARE, "4");
 
     @Test
     void testGetArea() {

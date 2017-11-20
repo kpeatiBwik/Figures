@@ -2,7 +2,7 @@ import org.junit.Test;
 
 public class CircleTest {
 
-    private AbstractFigure circle = new Circle(FiguresType.CIRCLE, 4);
+    private AbstractFigure circle = new Circle(FiguresType.CIRCLE,"4");
 
     @Test
     public void testGetArea() {

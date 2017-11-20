@@ -2,9 +2,9 @@ public class Square extends AbstractFigure {
 
     private double sideA;
 
-    protected Square(String figureType, double sideA) {
+    protected Square(String figureType, String sideA) {
         super(figureType);
-        setSideA(sideA);
+        setSideA(Double.valueOf(sideA));
     }
 
     private double getSideA() {

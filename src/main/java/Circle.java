@@ -2,21 +2,17 @@ public class Circle extends AbstractFigure {
 
     private double radius;
 
-    protected Circle(String figureType, double radius) {
+    protected Circle(String figureType, String radius) {
         super(figureType);
         setRadius(radius);
-    }
-
-    public Circle() {
-        super(FiguresType.CIRCLE);
     }
 
     private double getRadius() {
         return radius;
     }
 
-    private void setRadius(double radius) {
-        this.radius = radius;
+    private void setRadius(String radius) {
+        this.radius = Double.valueOf(radius);
     }
 
     double getArea() {
@@ -27,29 +23,6 @@ public class Circle extends AbstractFigure {
     double getPerimeter() {
         if (getRadius() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return 2 * Math.PI * getRadius();
-    }
-
-    //анонимный класс
-    public class AnnonymusClassCircle {
-        public Triangle getTriangle() {
-            return new Triangle() {
-                @Override
-                public String getMsg() {
-                    return "Hi, i'm Triangle from Circle";
-                }
-            };
-        }
-    }
-
-    //метод внутри которого анонимный класс
-    String methodWithAnonymousClass() {
-        Triangle triangle = new Triangle() {
-            @Override
-            public String getFigureType() {
-                return (this.getClass().getName());
-            }
-        };
-        return triangle.getFigureType();
     }
 
     @Override
