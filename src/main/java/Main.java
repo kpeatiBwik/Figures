@@ -131,3 +131,5 @@ public class Main {
 //                squareList.sort(Square::squareComparator);
 //                System.out.println();
 //                squareList.forEach(System.out::println);
+//можно и так сортирнуть
+//                Collections.sort(squareList,Square::squareComparator);
