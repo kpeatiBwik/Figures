@@ -1,4 +1,6 @@
-public abstract class AbstractFigure {
+import java.io.Serializable;
+
+public abstract class AbstractFigure implements Serializable{
     private String figureType;
 
     public AbstractFigure(String figureType) {

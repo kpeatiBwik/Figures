@@ -1,5 +1,7 @@
-public class Square extends AbstractFigure {
+import java.io.Serializable;
 
+public class Square extends AbstractFigure implements Comparable<Square>, Serializable {
+    public static final long serialVersionUID = 42L;
     private double sideA;
 
     protected Square(String figureType, String sideA) {
@@ -44,4 +46,16 @@ public class Square extends AbstractFigure {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
+
+    @Override
+    public int compareTo(Square o) {
+        return (int) (this.sideA - o.getSideA());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Square {" + " sideA = " + sideA + " }";
+    }
 }
+
+
