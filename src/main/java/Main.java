@@ -116,8 +116,18 @@ public class Main {
 //                System.out.println(e.getMessage());
 //                }
 
-//не самый лучший пример теста компаратора
-//                Square test = new Square(FiguresType.SQUARE,"1");
-//                Square s1 = new Square(FiguresType.SQUARE,"9");
-//                Square s2 = new Square(FiguresType.SQUARE,"8");
-//                System.out.println(test.compare(s1,s2));
+//тест компаратора
+//                List<Square> squareList = new ArrayList<>();
+//                squareList.add(new Square(FiguresType.SQUARE,"8"));
+//                squareList.add(new Square(FiguresType.SQUARE,"1"));
+//                squareList.add(new Square(FiguresType.SQUARE,"3"));
+//                squareList.add(new Square(FiguresType.SQUARE,"4"));
+//                squareList.add(new Square(FiguresType.SQUARE,"6"));
+//                squareList.add(new Square(FiguresType.SQUARE,"2"));
+//                squareList.add(new Square(FiguresType.SQUARE,"5"));
+//                squareList.add(new Square(FiguresType.SQUARE,"9"));
+//
+//                squareList.forEach(System.out::println);
+//                squareList.sort(Square::SquareComparator);
+//                System.out.println();
+//                squareList.forEach(System.out::println);

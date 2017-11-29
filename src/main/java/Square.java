@@ -62,6 +62,16 @@ public class Square extends AbstractFigure implements Comparable<Square>, Serial
     public String toString() {
         return super.toString() + ", Square {" + " sideA = " + sideA + " }";
     }
+
+    static int SquareComparator(Square s1, Square s2) {
+        if (s1.getSideA() > s2.getSideA()) {
+            return 1;
+        } else if (s1.getSideA() < s2.getSideA()) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
 }
 
 
