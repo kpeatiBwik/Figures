@@ -116,7 +116,7 @@ public class Main {
 //                System.out.println(e.getMessage());
 //                }
 
-//тест компаратора
+//тест компаратора (не интерфейса), как оказалось, в List метод sort имеет дефолтную реализацию, поэтому мой якобы компаратор работает как нужно
 //                List<Square> squareList = new ArrayList<>();
 //                squareList.add(new Square(FiguresType.SQUARE,"8"));
 //                squareList.add(new Square(FiguresType.SQUARE,"1"));
