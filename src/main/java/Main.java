@@ -128,6 +128,6 @@ public class Main {
 //                squareList.add(new Square(FiguresType.SQUARE,"9"));
 //
 //                squareList.forEach(System.out::println);
-//                squareList.sort(Square::SquareComparator);
+//                squareList.sort(Square::squareComparator);
 //                System.out.println();
 //                squareList.forEach(System.out::println);
