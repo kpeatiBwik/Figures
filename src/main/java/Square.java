@@ -1,6 +1,7 @@
 import java.io.Serializable;
+import java.util.Comparator;
 
-public class Square extends AbstractFigure implements Comparable<Square>, Serializable {
+public class Square extends AbstractFigure implements Comparable<Square>, Serializable, Comparator<Square> {
     public static final long serialVersionUID = 42L;
     private double sideA;
 
@@ -25,6 +26,11 @@ public class Square extends AbstractFigure implements Comparable<Square>, Serial
     double getPerimeter() {
         if (getSideA() <= 0) throw new IllegalArgumentException("Некорректные данные");
         return getSideA() * 4;
+    }
+
+    @Override
+    public int compare(Square o1, Square o2) {
+        return o1.compareTo(o2);
     }
 
     @Override

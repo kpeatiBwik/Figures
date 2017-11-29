@@ -3,14 +3,12 @@
  * skype: dp100991svi
  */
 
-import java.io.*;
 import java.util.*;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         try {
             while (true) {
                 menu();
@@ -117,3 +115,9 @@ public class Main {
 //                } catch (Exception e) {
 //                System.out.println(e.getMessage());
 //                }
+
+//не самый лучший пример теста компаратора
+//                Square test = new Square(FiguresType.SQUARE,"1");
+//                Square s1 = new Square(FiguresType.SQUARE,"9");
+//                Square s2 = new Square(FiguresType.SQUARE,"8");
+//                System.out.println(test.compare(s1,s2));
