@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public abstract class AbstractFigure implements Serializable{
+public abstract class AbstractFigure implements Serializable {
     private String figureType;
 
     public AbstractFigure(String figureType) {
@@ -24,7 +24,8 @@ public abstract class AbstractFigure implements Serializable{
     public String toString() {
         String result;
         try {
-            result = "Тип фигуры = ".concat(getFigureType()).concat(", площадь = ").concat(String.valueOf(getArea())).concat(", периметр = ").concat(String.valueOf(getPerimeter()));
+//            result = "Тип фигуры = ".concat(getFigureType()).concat(", площадь = ").concat(String.valueOf(getArea())).concat(", периметр = ").concat(String.valueOf(getPerimeter()));
+            result = String.format("Тип фигуры = %-15s площадь = %-15f периметр = %-15f", getFigureType(), getArea(), getPerimeter());
         } catch (IllegalArgumentException e) {
             result = e.getMessage();
         }

@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Square extends AbstractFigure implements Comparable<Square>, Serializable {
+public class Square extends AbstractFigure implements Serializable {
     public static final long serialVersionUID = 42L;
     private double sideA;
 
@@ -45,7 +45,6 @@ public class Square extends AbstractFigure implements Comparable<Square>, Serial
         return result;
     }
 
-    @Override
     public int compareTo(Square o) {
         return (int) (this.sideA - o.getSideA());
     }

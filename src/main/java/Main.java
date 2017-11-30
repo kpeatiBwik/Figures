@@ -21,11 +21,11 @@ public class Main {
 
 
     static void menu() throws NumberFormatException {
-        System.out.println("Вычислить площадь и периметр:\n1.Круга\n2.Треугольника\n3.Квадрата\n4.Прямоугольника\n5.Выход из программы");
+        System.out.println("\nВычислить площадь и периметр:\n1.Круга\n2.Треугольника\n3.Квадрата\n4.Прямоугольника\n5.Компараторы\n6.Выход из программы");
         String x = scanner.nextLine();
         switch (x) {
             case "1":
-                System.out.println("Введите радиус круга:");
+                System.out.println("\nВведите радиус круга:");
                 String r = scanner.nextLine();
                 AbstractFigure circle = new Circle(FiguresType.CIRCLE, r);
                 System.out.println(circle.toString());
@@ -55,6 +55,10 @@ public class Main {
                 System.out.println(rectangle.toString());
                 break;
             case "5":
+                System.out.println("Тест компараторов:");
+                comparatorsTest();
+                break;
+            case "6":
                 System.out.println("Всего доброго!");
                 scanner.close();
                 System.exit(0);
@@ -63,7 +67,6 @@ public class Main {
                 System.out.println("Выбор пункта меню неправильный, попробуйте ещё раз");
         }
     }
-}
 
 //проверочка
 //                List<AbstractFigure> abstractFigures = new ArrayList<AbstractFigure>();
@@ -134,7 +137,7 @@ public class Main {
 //можно и так сортирнуть
 //                Collections.sort(squareList,Square::squareComparator);
 
-//адекватная проверка, адекватного Компаратора (который интерфейс)
+    //адекватная проверка, адекватного Компаратора (который интерфейс)
 //                List<AbstractFigure> abstractFigures = new ArrayList<>();
 //                abstractFigures.add(new Square(FiguresType.SQUARE, "15"));
 //                abstractFigures.add(new Circle(FiguresType.CIRCLE, "60"));
@@ -154,3 +157,46 @@ public class Main {
 //                Collections.sort(abstractFigures, new FiguresComparator());
 //                System.out.println("Сортированный");
 //                abstractFigures.forEach(System.out::println);
+
+    public static void comparatorsTest() {
+        List<AbstractFigure> abstractFigures = new ArrayList<>();
+        abstractFigures.add(new Square(FiguresType.SQUARE, "15"));
+        abstractFigures.add(new Square(FiguresType.SQUARE, "5"));
+        abstractFigures.add(new Circle(FiguresType.CIRCLE, "5"));
+        abstractFigures.add(new Rectangle(FiguresType.RECTANGLE, "4", "6"));
+        abstractFigures.add(new Rectangle(FiguresType.RECTANGLE, "2", "3"));
+        abstractFigures.add(new Square(FiguresType.SQUARE, "6"));
+        abstractFigures.add(new Triangle(FiguresType.TRIANGLE, "8", "6", "6"));
+        abstractFigures.add(new Rectangle(FiguresType.RECTANGLE, "2", "4"));
+        abstractFigures.add(new Square(FiguresType.SQUARE, "10"));
+        abstractFigures.add(new Square(FiguresType.SQUARE, "3"));
+        abstractFigures.add(new Triangle(FiguresType.TRIANGLE, "5", "6", "9"));
+        abstractFigures.add(new Square(FiguresType.SQUARE, "2"));
+        System.out.println("\nНе сортированный");
+        abstractFigures.forEach(System.out::println);
+
+        System.out.println("\nСортированный по типу, потом по периметру, потом по площади");
+        Collections.sort(abstractFigures, new CompByType()
+                .thenComparing(new CompByPerimeter())
+                .thenComparing(new CompByArea()));
+        abstractFigures.forEach(System.out::println);
+
+        System.out.println("\nСортированный по периметру, потом по типу, потом по площади");
+        Collections.sort(abstractFigures, new CompByPerimeter()
+                .thenComparing(new CompByType())
+                .thenComparing(new CompByArea()));
+        abstractFigures.forEach(System.out::println);
+
+        System.out.println("\nСортированный по площади, потом по типу, потом по периметру");
+        Collections.sort(abstractFigures, new CompByArea()
+                .thenComparing(new CompByType())
+                .thenComparing(new CompByPerimeter()));
+        abstractFigures.forEach(System.out::println);
+
+        System.out.println("\nСортированный по площади, потом по периметру, потом по типу");
+        Collections.sort(abstractFigures, new CompByArea()
+                .thenComparing(new CompByPerimeter())
+                .thenComparing(new CompByType()));
+        abstractFigures.forEach(System.out::println);
+    }
+}
