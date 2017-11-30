@@ -48,6 +48,6 @@ public class Circle extends AbstractFigure implements Comparable<Circle> {
 
     @Override
     public String toString() {
-        return super.toString() + " Circle {" + " radius = " + radius + " }";
+        return super.toString() + ", Circle {" + " radius = " + radius + " }";
     }
 }
