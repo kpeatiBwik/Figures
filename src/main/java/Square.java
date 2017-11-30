@@ -32,9 +32,7 @@ public class Square extends AbstractFigure implements Comparable<Square>, Serial
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-
         Square square = (Square) o;
-
         return Double.compare(square.sideA, sideA) == 0;
     }
 
@@ -57,9 +55,10 @@ public class Square extends AbstractFigure implements Comparable<Square>, Serial
         return super.toString() + ", Square {" + " sideA = " + sideA + " }";
     }
 
-    static int squareComparator(Square s1, Square s2) {
-        return (int) s1.getSideA() > s2.getSideA() ? 1 : s1.getSideA() < s2.getSideA() ? -1 : 0;
-    }
+//не тру компаратор
+//    static int squareComparator(Square s1, Square s2) {
+//        return (int) s1.getSideA() > s2.getSideA() ? 1 : s1.getSideA() < s2.getSideA() ? -1 : 0;
+//    }
 }
 
 

@@ -1,4 +1,4 @@
-public class Circle extends AbstractFigure {
+public class Circle extends AbstractFigure implements Comparable<Circle> {
 
     private double radius;
 
@@ -39,5 +39,15 @@ public class Circle extends AbstractFigure {
     public int hashCode() {
         long temp = Double.doubleToLongBits(radius);
         return (int) (temp ^ (temp >>> 32));
+    }
+
+    @Override
+    public int compareTo(Circle o) {
+        return (int) (this.radius - o.getRadius());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Circle {" + " radius = " + radius + " }";
     }
 }

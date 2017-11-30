@@ -133,3 +133,24 @@ public class Main {
 //                squareList.forEach(System.out::println);
 //можно и так сортирнуть
 //                Collections.sort(squareList,Square::squareComparator);
+
+//адекватная проверка, адекватного Компаратора (который интерфейс)
+//                List<AbstractFigure> abstractFigures = new ArrayList<>();
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "15"));
+//                abstractFigures.add(new Circle(FiguresType.CIRCLE, "60"));
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "5"));
+//                abstractFigures.add(new Circle(FiguresType.CIRCLE, "5"));
+//                abstractFigures.add(new Circle(FiguresType.CIRCLE, "90"));
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "80"));
+//                abstractFigures.add(new Circle(FiguresType.CIRCLE, "77"));
+//                abstractFigures.add(new Rectangle(FiguresType.RECTANGLE, "2","3"));
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "66"));
+//                abstractFigures.add(new Circle(FiguresType.CIRCLE, "11"));
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "10"));
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "9"));
+//                abstractFigures.add(new Square(FiguresType.SQUARE, "2"));
+//                System.out.println("Не сортированный");
+//                abstractFigures.forEach(System.out::println);
+//                Collections.sort(abstractFigures, new FiguresComparator());
+//                System.out.println("Сортированный");
+//                abstractFigures.forEach(System.out::println);
