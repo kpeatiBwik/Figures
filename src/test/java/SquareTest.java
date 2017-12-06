@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,21 +10,12 @@ class SquareTest {
     @Test
     void testGetArea() {
         final double expected = 16.0;
-        if (expected == square.getArea()) {
-            System.out.println(".getArea для ".concat(square.getFigureType()).concat(" - отрабатывает корректно"));
-        } else {
-            System.out.println(".getArea для ".concat(square.getFigureType()).concat(" - отрабатывает НЕ корректно!"));
-        }
+        Assert.assertTrue(expected == square.getArea());
     }
 
     @Test
     void testGetPerimeter() {
         final double expected = 16.0;
-        if (expected == square.getArea()) {
-            System.out.println(".getPerimeter для ".concat(square.getFigureType()).concat(" - отрабатывает корректно"));
-        } else {
-            System.out.println(".getPerimeter для ".concat(square.getFigureType()).concat(" - отрабатывает НЕ корректно!"));
-        }
+        Assert.assertTrue(expected == square.getPerimeter());
     }
-
 }
