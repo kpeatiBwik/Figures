@@ -1,5 +1,15 @@
+import org.junit.Assert;
+
 public class MainTest {
     public static void main(String[] args) {
+
+        IA triangle = new Triangle(FiguresType.TRIANGLE, "10", "12", "15");
+
+        AbstractFigure circle = new Circle(FiguresType.CIRCLE, "10");
+
+        Assert.assertTrue(triangle.B((Circle) circle));
+
+        Assert.assertTrue(triangle.C((Circle) circle));
 
     }
 }

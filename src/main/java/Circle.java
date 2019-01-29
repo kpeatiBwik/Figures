@@ -7,7 +7,7 @@ public class Circle extends AbstractFigure implements Comparable<Circle> {
         setRadius(radius);
     }
 
-    private double getRadius() {
+    public double getRadius() {
         return radius;
     }
 

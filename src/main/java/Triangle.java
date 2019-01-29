@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Triangle extends AbstractFigure {
+public class Triangle extends AbstractFigure implements IA {
 
     private double sideA;
     private double sideB;
@@ -75,5 +75,23 @@ public class Triangle extends AbstractFigure {
         temp = Double.doubleToLongBits(sideC);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+    }
+
+    //окружность вписанная в треугольник
+    @Override
+    public boolean B(Circle circle) {
+        double tmp = this.getArea() / (this.getPerimeter() / 2);
+        System.out.println("B tmp -> " + tmp);
+        System.out.println("B circle.getRadius() -> " + circle.getRadius());
+        return tmp >= circle.getRadius();
+    }
+
+    //окружность описанная вокруг треугольника
+    @Override
+    public boolean C(Circle circle) {
+        double tmp = (this.getSideA() * this.getSideB() * this.getSideC()) / (4 * this.getArea());
+        System.out.println("C tmp -> " + tmp);
+        System.out.println("C circle.getRadius() -> " + circle.getRadius());
+        return tmp <= circle.getRadius();
     }
 }
